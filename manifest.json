@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Pause/Resume YouTube",
+  "version": "1.0",
+  "description": "Pauses YouTube videos when switching away, and resumes when coming back.",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "scripting"  
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ]
+}
